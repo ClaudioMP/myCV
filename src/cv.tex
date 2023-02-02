@@ -1,0 +1,49 @@
+% !TEX TS-program = luatex
+% Awesome Source CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/darwiin/awesome-neue-latex-cv
+%
+% Author:
+% Christophe Roger (Darwiin)
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+\documentclass[localFont,alternative,indigo,10pt,compact]{yaac-another-awesome-cv}
+\name{Claudio A.}{Maldonado P.}
+\tagline{Ingeniero Civil en Telecomunicaciones | Python Developer}
+\socialinfo{
+	\linkedin{claudiomp}
+	%\github{clauidoMP}\\
+	\smartphone{+56 9 6203 4487}
+	\email{clmaldonadop@gmail.com}\\
+	\address{Volcán Corcovado 5820, Dpto 207, Torre 2, Pto Montt, Los Lagos, Chile}\\
+	\infos{Nacido el 29 de Agosoto de 1991 en Concepción, Chile}
+}
+
+% Uncomment the following line and use a value from 1.5cm to 2.5cm
+% \setleftcolumnlength{2.5cm}
+
+% Uncomment to add the bibliography (see section_publications.tex)
+\addbibresource{my_publications.bib}
+
+\begin{document}
+
+	\makecvheader
+
+	\makecvfooter
+		{\textsc{\today}} % \selectlanguage{english}\today
+		{\textsc{Claudio A. Maldonado P. - CV}}
+		{\thepage}
+
+	\input{sections/headline}
+	\input{sections/competences}				% Section competences
+	\input{sections/experience}		% Section experience
+	\input{sections/languages}					% Section languages
+	\input{sections/formation}				% Section formation
+	\input{sections/certs}				% Section certifications
+	\input{sections/references} 				% Section references
+	\input{sections/publications}			% Section publications
+
+\end{document}
