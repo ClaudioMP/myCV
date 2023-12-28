@@ -66,7 +66,7 @@
 
 % Dependences
 %A Few Useful Packages
-\RequirePackage[english]{babel}
+\RequirePackage[english,french]{babel}
 \RequirePackage[utf8]{luainputenc}
 \RequirePackage{fontspec} 					                 % for loading fonts
 \RequirePackage{url,parskip} 	    % other packages for formatting
@@ -99,7 +99,7 @@
       }
       { \definecolor{basecolor}{HTML}{e68a00} }
     }
-    { \definecolor{basecolor}{HTML}{1C4C96} }
+    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
   }
   { \definecolor{basecolor}{HTML}{b30000} }     %RED
 }
@@ -518,7 +518,7 @@
 
 \newcommand*\referee[5]{
   \hspace{1em}
-  \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
+  \begin{minipage}[t]{\dimexpr(\linewidth/3) - 3em}
     \begin{tabular}{>{}l >{}l}
       \multicolumn{2}{l}{\textbf{#1}}\\
       \multicolumn{2}{l}{\emph{#2}, \textsc{#3}}\\
