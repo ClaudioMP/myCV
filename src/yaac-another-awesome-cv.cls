@@ -103,7 +103,7 @@
   }
   { \definecolor{basecolor}{HTML}{b30000} }     %RED
 }
-{ \definecolor{basecolor}{HTML}{195975} }
+{ \definecolor{basecolor}{HTML}{006590} } %MI COLOR
 
 \definecolor{darkGrey}{HTML}{989898}
 
