@@ -1,0 +1,1 @@
+alta_cv/altacv.cls
