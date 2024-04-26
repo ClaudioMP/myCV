@@ -2,6 +2,7 @@
 *.aux
 *.out
 *.bbl
+*.bcf
 *.blg
 *.fls
 *.fdb_latexmk
