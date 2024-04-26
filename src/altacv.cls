@@ -324,7 +324,7 @@
     }
   \end{minipage}
   \begin{minipage}{.29\columnwidth}
-    \ifstrempty{#5}{}{\includegraphics[width=.9\columnwidth]{#5}}
+    \includegraphics[width=.9\columnwidth,height=28pt,keepaspectratio]{#5}
     {\small\makebox[0.5\linewidth][l]%
       {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
         ~#4}%
