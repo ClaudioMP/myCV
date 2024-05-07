@@ -2,11 +2,15 @@
 *.aux
 *.out
 *.bbl
+*.bcf
 *.blg
 *.fls
 *.fdb_latexmk
 *.xml
+*.xmpi
 *.synctex.gz
 /fonts/*
 /example/*
+/logos/*
 src/cv-blx.bib
+src/pdfa.xmpi

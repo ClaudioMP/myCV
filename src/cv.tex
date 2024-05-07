@@ -1,48 +1,188 @@
-% !TEX TS-program = luatex
-% Awesome Source CV LaTeX Template
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7, 9 August 2023) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
 %
-% This template has been downloaded from:
-% https://github.com/darwiin/awesome-neue-latex-cv
-%
-% Author:
-% Christophe Roger (Darwiin)
-%
-% Template license:
-% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
-\documentclass[localfont,green,11pt,compact]{yaac-another-awesome-cv}
-\name{Claudio A.}{Parra M.}
-\tagline{Telecommunications Engineer | Python Developer}
-\socialinfo{
-	\linkedin{claudiopm}
-	%\github{clauidoMP}\\
-	\smartphone{+56 9 6203 4487}
-	\email{clmaldonadop@gmail.com}\\
-	\address{W-488, n° 589, Castro, Los Lagos, Chile}\\
-	\infos{Born in August 29th, 1991 in Concepción, Chile}
-}
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
 
-% Uncomment the following line and use a value from 1.5cm to 2.5cm
-\setleftcolumnlength{2.5cm}
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-% Uncomment to add the bibliography (see section_publications.tex)
-%\addbibresource{my_publications.bib}
+\documentclass[10pt,letterpaper,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and packages.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.0cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If not using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}%1
+\definecolor{DarkPastelRed}{HTML}{450808}%2
+\definecolor{PastelRed}{HTML}{8F0D0D}%3
+\definecolor{GoldenEarth}{HTML}{E7D192}%4
+\definecolor{color1}{HTML}{003545}
+\definecolor{color2}{HTML}{00454A}
+\definecolor{color3}{HTML}{3C6562}
+\definecolor{color4}{HTML}{ED6363}
+\colorlet{name}{black}
+\colorlet{tagline}{color3}
+\colorlet{heading}{color2}
+\colorlet{headingrule}{color4}
+\colorlet{subheading}{color3}
+\colorlet{accent}{color3}
+\colorlet{emphasis}{color1}
+\colorlet{body}{black}
+
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+\renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+%\renewcommand{\cvLocationMarker}{\faMapMarker}
+
+%{title}{company or institution}{time period}{location}%
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+% \input{pubs-authoryear.tex}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.tex}
+
+%% sample.bib contains your publications
+\addbibresource{my_pubs.bib}
 
 \begin{document}
+\name{Claudio A. Parra M.}
+\tagline{Python Developer | Telecommunications Engineer}
+%% You can add multiple photos on the left or right
+% \photoR{2.8cm}{alta_cv/Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+\headline{\input{sections/headline.tex}}
+\personalinfo{%
+  % Not all of these are required!
+  \email{clmaldonadop@gmail.com}
+  \location{Castro, Region de Los Lagos, Chile}
+  % \homepage{www.homepage.com}
+  \linkedin{claudiopm}
+  \github{claudioparram}
+  %\orcid{0000-0000-0000-0000}
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  \NewInfoField{wsp}{\faWhatsapp}[https://wa.me/]
+  \wsp{+56962034487}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+  %%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
 
-	\makecvheader
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
 
-	\makecvfooter
-		{\textsc{\selectlanguage{english}\today}} % 
-		{\textsc{Claudio A. Parra M. - CV}}
-		{\thepage}
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.65}
 
-	\input{sections/headline}
-	\input{sections/competences}				% Section competences
-	\input{sections/experience}		% Section experience
-	\input{sections/languages}					% Section languages
-	\input{sections/formation}				% Section formation
-	\input{sections/certs}				% Section certifications
-	\input{sections/references} 				% Section references
-	%\input{sections/publications}			% Section publications
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{\faLaptop Courses and Certificates}
+\input{sections/certs.tex}
+
+\cvsection{\faSuitcase Professional experience}
+\input{sections/experience.tex}
+
+\switchcolumn
+
+\cvsection{\faGraduationCap Education}
+\input{sections/formation.tex}
+\cvsection{\faLanguage Languages}
+
+\cvskill{Spanish}{5}
+\cvskill{English}{3.5}
+
+\cvsection{\faKeyboard Skills}
+\input{sections/competences.tex}\\
+
+%% Supports X.5 values.
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vspace etc to make adjustments.
+
+% \divider
+\cvsection{\faFile Publications}
+
+\mynames{Aqueveque/C.\bibnamedelimi Maldonado}
+
+\nocite{*}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}},type=article]
+
+%\cvsection{Referees}
+
+%\input{sections/references.tex}
+
+\end{paracol}
 
 \end{document}
