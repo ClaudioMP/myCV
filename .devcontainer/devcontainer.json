@@ -16,11 +16,10 @@
             },
         "extensions": [
             "vscode-icons-team.vscode-icons",
-            "eamodio.gitlens",
             "mutantdino.resourcemonitor",
             "oderwat.indent-rainbow",
             "James-Yu.latex-workshop"
-        ]
+            ]
         }   
     },
     "postCreateCommand": "fish -c 'omf install agnoster' && fish -c 'omf theme agnoster'"
